@@ -12,7 +12,7 @@
 
 
 -- src/Display.hs
-module SGR where
+module TerminalSGR where
 
 
 -- ================================================================
