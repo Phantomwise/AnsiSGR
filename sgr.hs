@@ -23,6 +23,7 @@ module SGR where
 data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Default
             | Dull | Vivid
             | Bold | Faint | IntensityOff
+            | Italic | Fraktur | TypefaceOff
             | Single | Double | UnderlineOff
             | Slow | Rapid | BlinkOff
             | InvertOn | InvertOff
@@ -148,6 +149,25 @@ intensity Off      = "\x1b[22m"
 intensity _        = ""
 
 
+typeface :: SGR -> String
+typeface Italic    = "\x1b[3m"
+typeface Fraktur   = "\x1b[20m"
+typeface Off       = "\x1b[23m"
+typeface _         = ""
+
+
+italic :: SGR -> String
+italic On        = typeface Italic
+italic Off       = typeface Off
+italic _         = ""
+
+
+fraktur :: SGR -> String
+fraktur On        = typeface Fraktur
+fraktur Off       = typeface Off
+fraktur _         = ""
+
+
 underline :: SGR -> String
 underline Single   = "\x1b[4m"
 underline Double   = "\x1b[21m"
@@ -213,3 +233,4 @@ reset = "\x1b[0m"
 
 
 -- ================================================================
+
