@@ -20,7 +20,7 @@ module SGR where
 -- ================================================================
 
 
-data Ansi      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Default
+data SGR      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Default
                | Dull | Vivid
                | Bold | Faint | IntensityOff
                | Single | Double | UnderlineOff
@@ -38,7 +38,7 @@ data Ansi      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | 
 -- ================================================================
 
 
-fg :: Ansi -> Ansi -> String
+fg :: SGR -> SGR -> String
 fg Dull  Black   = "\x1b[30m"
 fg Dull  Red     = "\x1b[31m"
 fg Dull  Green   = "\x1b[32m"
@@ -59,7 +59,7 @@ fg _     Default = "\x1b[39m"
 fg _     _       = ""
 
 
-fgd :: Ansi -> String
+fgd :: SGR -> String
 fgd Black   = "\x1b[30m"
 fgd Red     = "\x1b[31m"
 fgd Green   = "\x1b[32m"
@@ -72,7 +72,7 @@ fgd Default = "\x1b[39m"
 fgd _       = ""
 
 
-fgv :: Ansi -> String
+fgv :: SGR -> String
 fgv Black   = "\x1b[90m"
 fgv Red     = "\x1b[91m"
 fgv Green   = "\x1b[92m"
@@ -85,7 +85,7 @@ fgv Default = "\x1b[39m"
 fgv _       = ""
 
 
-bg :: Ansi -> Ansi -> String
+bg :: SGR -> SGR -> String
 bg Dull Black    = "\x1b[40m"
 bg Dull Red      = "\x1b[41m"
 bg Dull Green    = "\x1b[42m"
@@ -106,7 +106,7 @@ bg _     Default = "\x1b[49m"
 bg _     _       = ""
 
 
-bgd :: Ansi -> String
+bgd :: SGR -> String
 bgd Black   = "\x1b[40m"
 bgd Red     = "\x1b[41m"
 bgd Green   = "\x1b[42m"
@@ -119,7 +119,7 @@ bgd Default = "\x1b[49m"
 bgd _       = ""
 
 
-bgv :: Ansi -> String
+bgv :: SGR -> String
 bgv Black   = "\x1b[100m"
 bgv Red     = "\x1b[101m"
 bgv Green   = "\x1b[102m"
@@ -137,41 +137,41 @@ bgv _       = ""
 -- ================================================================
 
 
-intensity :: Ansi -> String
+intensity :: SGR -> String
 intensity Bold     = "\x1b[1m"
 intensity Faint    = "\x1b[2m"
 intensity Off      = "\x1b[22m"
 intensity _        = ""
 
 
-underline :: Ansi -> String
+underline :: SGR -> String
 underline Single   = "\x1b[4m"
 underline Double   = "\x1b[21m"
 underline Off      = "\x1b[24m"
 underline _        = ""
 
 
-blink :: Ansi -> String
+blink :: SGR -> String
 blink Slow         = "\x1b[5m"
 blink Rapid        = "\x1b[6m"
 blink Off          = "\x1b[25m"
 blink _            = ""
 
 
-invert :: Ansi -> String
+invert :: SGR -> String
 invert On         = "\x1b[7m"
 invert Off        = "\x1b[27m"
 invert _          = ""
 -- Renamed from "revert" to avoid clash with Prelude
 
 
-conceal :: Ansi -> String
+conceal :: SGR -> String
 conceal On         = "\x1b[8m"
 conceal Off        = "\x1b[28m"
 conceal _          = ""
 
 
-strike :: Ansi -> String
+strike :: SGR -> String
 strike On          = "\x1b[9m"
 strike Off         = "\x1b[29m"
 strike _           = ""
