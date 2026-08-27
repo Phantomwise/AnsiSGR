@@ -12,7 +12,11 @@
 
 
 -- src/Display.hs
-module TerminalSGR where
+module TerminalSGR
+    ( SGR (..)
+    ,fg, fgd, fgv, bg, bgd, bgv, intensity, typeface, italic, fraktur, underline, blink, invert, conceal, strike, proportional, frame, overline, ideogram, script, reset
+    )
+    where
 
 
 -- ================================================================
