@@ -5,9 +5,11 @@
 
 module TerminalSGR
     ( SGR (..)
-    ,fg, fgd, fgv, bg, bgd, bgv, intensity, typeface, italic, fraktur, underline, blink, invert, conceal, strike, proportional, frame, overline, ideogram, script, reset
+    , fg, fgd, fgv, bg, bgd, bgv
     , fg256, bg256, ul256
     , fgRGB, bgRGB, ulRGB
+    , intensity, typeface, italic, fraktur, underline, blink, invert, conceal, strike, proportional, frame, overline, ideogram, script
+    , reset
     )
     where
 
