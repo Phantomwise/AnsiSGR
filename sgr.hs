@@ -20,17 +20,17 @@ module SGR where
 -- ================================================================
 
 
-data SGR      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Default
-               | Dull | Vivid
-               | Bold | Faint | IntensityOff
-               | Single | Double | UnderlineOff
-               | Slow | Rapid | BlinkOff
-               | InvertOn | InvertOff
-               | ConcealOn | ConcealOff
-               | StrikeOn | StrikeOff
-               | ProportionalOn | ProportionalOff
-               | On | Off
-			   | Reset
+data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Default
+            | Dull | Vivid
+            | Bold | Faint | IntensityOff
+            | Single | Double | UnderlineOff
+            | Slow | Rapid | BlinkOff
+            | InvertOn | InvertOff
+            | ConcealOn | ConcealOff
+            | StrikeOn | StrikeOff
+            | ProportionalOn | ProportionalOff
+            | On | Off
+            | Reset
 	deriving (Show)
 
 
