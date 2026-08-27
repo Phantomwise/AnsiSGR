@@ -11,7 +11,6 @@
 -- ================================================================
 
 
--- src/Display.hs
 module TerminalSGR
     ( SGR (..)
     ,fg, fgd, fgv, bg, bgd, bgv, intensity, typeface, italic, fraktur, underline, blink, invert, conceal, strike, proportional, frame, overline, ideogram, script, reset
