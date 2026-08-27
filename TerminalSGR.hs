@@ -49,7 +49,7 @@ data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Def
             | Sub | Sup
             | On | Off
             | Reset
-	deriving (Show)
+    deriving (Show)
 
 
 -- ================================================================
