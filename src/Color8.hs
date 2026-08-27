@@ -3,14 +3,14 @@
 -- ================================================================
 
 
-module Color8 (Color(..), Brightness(..), fg, fgd, fgv, bg, bgd, bgv) where
+module Color8 (Color8(..), Brightness(..), fg, fgd, fgv, bg, bgd, bgv) where
 
 
-data Color         = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
+data Color8         = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
 data Brightness    = Dull | Vivid
 
 
-fg :: Brightness -> Color -> String
+fg :: Brightness -> Color8 -> String
 fg Dull  Black     = "\x1b[30m"
 fg Dull  Red       = "\x1b[31m"
 fg Dull  Green     = "\x1b[32m"
@@ -29,7 +29,7 @@ fg Vivid Cyan      = "\x1b[96m"
 fg Vivid White     = "\x1b[97m"
 
 
-fgd :: Color -> String
+fgd :: Color8 -> String
 fgd Black          = "\x1b[30m"
 fgd Red            = "\x1b[31m"
 fgd Green          = "\x1b[32m"
@@ -40,7 +40,7 @@ fgd Cyan           = "\x1b[36m"
 fgd White          = "\x1b[37m"
 
 
-fgv :: Color -> String
+fgv :: Color8 -> String
 fgv Black          = "\x1b[90m"
 fgv Red            = "\x1b[91m"
 fgv Green          = "\x1b[92m"
@@ -51,7 +51,7 @@ fgv Cyan           = "\x1b[96m"
 fgv White          = "\x1b[97m"
 
 
-bg :: Brightness -> Color -> String
+bg :: Brightness -> Color8 -> String
 bg Dull Black      = "\x1b[40m"
 bg Dull Red        = "\x1b[41m"
 bg Dull Green      = "\x1b[42m"
@@ -70,7 +70,7 @@ bg Vivid Cyan      = "\x1b[106m"
 bg Vivid White     = "\x1b[107m"
 
 
-bgd :: Color -> String
+bgd :: Color8 -> String
 bgd Black          = "\x1b[40m"
 bgd Red            = "\x1b[41m"
 bgd Green          = "\x1b[42m"
@@ -81,7 +81,7 @@ bgd Cyan           = "\x1b[46m"
 bgd White          = "\x1b[47m"
 
 
-bgv :: Color -> String
+bgv :: Color8 -> String
 bgv Black          = "\x1b[100m"
 bgv Red            = "\x1b[101m"
 bgv Green          = "\x1b[102m"
