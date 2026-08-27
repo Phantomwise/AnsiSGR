@@ -30,6 +30,7 @@ data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Def
             | StrikeOn | StrikeOff
             | ProportionalOn | ProportionalOff
             | OverlineOn | OverlineOff
+            | Rect | Circle
             | On | Off
             | Reset
 	deriving (Show)
@@ -183,6 +184,13 @@ proportional :: SGR -> String
 proportional On    = "\x1b[26m"
 proportional Off   = "\x1b[50m"
 proportional _     = ""
+
+
+frame :: SGR -> String
+frame Rect         = "\x1b[51m"
+frame Circle       = "\x1b[52m"
+frame Off          = "\x1b[54m"
+frame _            = ""
 
 
 overline :: SGR -> String
