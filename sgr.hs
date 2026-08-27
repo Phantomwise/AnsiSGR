@@ -28,6 +28,7 @@ data SGR      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | D
                | InvertOn | InvertOff
                | ConcealOn | ConcealOff
                | StrikeOn | StrikeOff
+               | ProportionalOn | ProportionalOff
                | On | Off
 			   | Reset
 	deriving (Show)
@@ -175,6 +176,12 @@ strike :: SGR -> String
 strike On          = "\x1b[9m"
 strike Off         = "\x1b[29m"
 strike _           = ""
+
+
+proportional :: SGR -> String
+proportional On    = "\x1b[26m"
+proportional Off   = "\x1b[50m"
+proportional _     = ""
 
 
 reset :: String
