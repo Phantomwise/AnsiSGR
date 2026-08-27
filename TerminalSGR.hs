@@ -4,15 +4,6 @@
 
 
 module TerminalSGR
-    ( SGR (..)
-    , fg, fgd, fgv, bg, bgd, bgv
-    , fg256, bg256, ul256
-    , fgRGB, bgRGB, ulRGB
-    , fgHex, bgHex, ulHex
-    , ul
-    , intensity, typeface, italic, fraktur, underline, blink, invert, conceal, strike, proportional, frame, overline, ideogram, script
-    , reset
-    )
     where
 
 
@@ -30,23 +21,20 @@ import Text.Read (readMaybe)
 -- ================================================================
 
 
-data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Default
-            | Dull | Vivid
-            | Bold | Faint | IntensityOff
-            | Italic | Fraktur | TypefaceOff
-            | Single | Double | UnderlineOff
-            | Slow | Rapid | BlinkOff
-            | InvertOn | InvertOff
-            | ConcealOn | ConcealOff
-            | StrikeOn | StrikeOff
-            | ProportionalOn | ProportionalOff
-            | OverlineOn | OverlineOff
-            | Rect | Circle
-            | Underline | Underline2 | Overline | Overline2 | RightLine | RightLine2 | LeftLine | LeftLine2 | Stress
-            | Sub | Sup
-            | On | Off
-            | Reset
-    deriving (Show)
+data Color      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
+data Brightness = Dull | Vivid
+
+data Intensity  = Bold | Faint
+data Typeface   = Italic | Fraktur
+data Underline  = Single | Double
+data Blink      = Slow | Rapid
+data Frame      = Rect | Circle
+data Ideogram   = Underline1 | Underline2 | Overline1 | Overline2 | RightLine1 | RightLine2 | LeftLine1 | LeftLine2 | Stress
+data Script     = Sub | Sup
+
+data Reset      = All
+                | Intensity | Typeface | Underline | Blink | Invert | Conceal | Strike | Proportional | Frame | Overline | Ideogram | Script
+                | Bg | Fg | Ul
 
 
 -- ================================================================
@@ -54,7 +42,7 @@ data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Def
 -- ================================================================
 
 
-fg :: SGR -> SGR -> String
+fg :: Brightness -> Color -> String
 fg Dull  Black   = "\x1b[30m"
 fg Dull  Red     = "\x1b[31m"
 fg Dull  Green   = "\x1b[32m"
@@ -71,11 +59,9 @@ fg Vivid Blue    = "\x1b[94m"
 fg Vivid Magenta = "\x1b[95m"
 fg Vivid Cyan    = "\x1b[96m"
 fg Vivid White   = "\x1b[97m"
-fg _     Default = "\x1b[39m"
-fg _     _       = ""
 
 
-fgd :: SGR -> String
+fgd :: Color -> String
 fgd Black   = "\x1b[30m"
 fgd Red     = "\x1b[31m"
 fgd Green   = "\x1b[32m"
@@ -84,11 +70,9 @@ fgd Blue    = "\x1b[34m"
 fgd Magenta = "\x1b[35m"
 fgd Cyan    = "\x1b[36m"
 fgd White   = "\x1b[37m"
-fgd Default = "\x1b[39m"
-fgd _       = ""
 
 
-fgv :: SGR -> String
+fgv :: Color -> String
 fgv Black   = "\x1b[90m"
 fgv Red     = "\x1b[91m"
 fgv Green   = "\x1b[92m"
@@ -97,11 +81,9 @@ fgv Blue    = "\x1b[94m"
 fgv Magenta = "\x1b[95m"
 fgv Cyan    = "\x1b[96m"
 fgv White   = "\x1b[97m"
-fgv Default = "\x1b[39m"
-fgv _       = ""
 
 
-bg :: SGR -> SGR -> String
+bg :: Brightness -> Color -> String
 bg Dull Black    = "\x1b[40m"
 bg Dull Red      = "\x1b[41m"
 bg Dull Green    = "\x1b[42m"
@@ -118,11 +100,9 @@ bg Vivid Blue    = "\x1b[104m"
 bg Vivid Magenta = "\x1b[105m"
 bg Vivid Cyan    = "\x1b[106m"
 bg Vivid White   = "\x1b[107m"
-bg _     Default = "\x1b[49m"
-bg _     _       = ""
 
 
-bgd :: SGR -> String
+bgd :: Color -> String
 bgd Black   = "\x1b[40m"
 bgd Red     = "\x1b[41m"
 bgd Green   = "\x1b[42m"
@@ -131,11 +111,9 @@ bgd Blue    = "\x1b[44m"
 bgd Magenta = "\x1b[45m"
 bgd Cyan    = "\x1b[46m"
 bgd White   = "\x1b[47m"
-bgd Default = "\x1b[49m"
-bgd _       = ""
 
 
-bgv :: SGR -> String
+bgv :: Color -> String
 bgv Black   = "\x1b[100m"
 bgv Red     = "\x1b[101m"
 bgv Green   = "\x1b[102m"
@@ -144,8 +122,6 @@ bgv Blue    = "\x1b[104m"
 bgv Magenta = "\x1b[105m"
 bgv Cyan    = "\x1b[106m"
 bgv White   = "\x1b[107m"
-bgv Default = "\x1b[49m"
-bgv _       = ""
 
 
 fg256 :: Word8 -> String
@@ -203,113 +179,95 @@ hexToWord hex = case readMaybe ("0x" ++ hex) of
 -- ================================================================
 
 
-intensity :: SGR -> String
+intensity :: Intensity -> String
 intensity Bold     = "\x1b[1m"
 intensity Faint    = "\x1b[2m"
-intensity Off      = "\x1b[22m"
-intensity _        = ""
 
 
-typeface :: SGR -> String
+typeface :: Typeface -> String
 typeface Italic    = "\x1b[3m"
 typeface Fraktur   = "\x1b[20m"
-typeface Off       = "\x1b[23m"
-typeface _         = ""
+
+italic :: String
+italic             = typeface Italic
+
+fraktur :: String
+fraktur            = typeface Fraktur
 
 
-italic :: SGR -> String
-italic On        = typeface Italic
-italic Off       = typeface Off
-italic _         = ""
-
-
-fraktur :: SGR -> String
-fraktur On        = typeface Fraktur
-fraktur Off       = typeface Off
-fraktur _         = ""
-
-
-ul :: SGR -> String
-ul Default  = "\x1b[59m"
-ul _        = ""
-
-
-underline :: SGR -> String
+underline :: Underline -> String
 underline Single   = "\x1b[4m"
 underline Double   = "\x1b[21m"
-underline Off      = "\x1b[24m"
-underline _        = ""
 
 
-blink :: SGR -> String
+blink :: Blink -> String
 blink Slow         = "\x1b[5m"
 blink Rapid        = "\x1b[6m"
-blink Off          = "\x1b[25m"
-blink _            = ""
 
 
-invert :: SGR -> String
-invert On         = "\x1b[7m"
-invert Off        = "\x1b[27m"
-invert _          = ""
+invert :: String
+invert             = "\x1b[7m"
 -- Renamed from "revert" to avoid clash with Prelude
 
 
-conceal :: SGR -> String
-conceal On         = "\x1b[8m"
-conceal Off        = "\x1b[28m"
-conceal _          = ""
+conceal :: String
+conceal            = "\x1b[8m"
 
 
-strike :: SGR -> String
-strike On          = "\x1b[9m"
-strike Off         = "\x1b[29m"
-strike _           = ""
+strike :: String
+strike             = "\x1b[9m"
 
 
-proportional :: SGR -> String
-proportional On    = "\x1b[26m"
-proportional Off   = "\x1b[50m"
-proportional _     = ""
+proportional :: String
+proportional       = "\x1b[26m"
 
 
-frame :: SGR -> String
+
+frame :: Frame -> String
 frame Rect         = "\x1b[51m"
 frame Circle       = "\x1b[52m"
-frame Off          = "\x1b[54m"
-frame _            = ""
 
 
-overline :: SGR -> String
-overline On        = "\x1b[53m"
-overline Off       = "\x1b[55m"
-overline _         = ""
+overline :: String
+overline           = "\x1b[53m"
 
 
-ideogram :: SGR -> String
-ideogram RightLine  = "\x1b[60m"
+ideogram :: Ideogram -> String
+ideogram RightLine1 = "\x1b[60m"
 ideogram RightLine2 = "\x1b[61m"
-ideogram LeftLine   = "\x1b[62m"
+ideogram LeftLine1  = "\x1b[62m"
 ideogram LeftLine2  = "\x1b[63m"
-ideogram Underline  = ideogram RightLine
+ideogram Underline1 = ideogram RightLine1
 ideogram Underline2 = ideogram RightLine2
-ideogram Overline   = ideogram LeftLine
+ideogram Overline1  = ideogram LeftLine1
 ideogram Overline2  = ideogram LeftLine2
 ideogram Stress     = "\x1b[64m"
-ideogram Off        = "\x1b[65m"
-ideogram _          = ""
 
 
-script :: SGR -> String
+script :: Script -> String
 script Sup         = "\x1b[73m"
 script Sub         = "\x1b[74m"
-script Off         = "\x1b[75m"
-script _           = ""
 
 
-reset :: String
-reset = "\x1b[0m"
--- Not actually using the constructor for now
+reset :: Reset -> String
+reset All            = "\x1b[0m"
+reset Intensity      = "\x1b[22m"
+reset Typeface       = "\x1b[23m"
+-- reset Italic         = reset Typeface -- Constructor name already taken
+-- reset Fraktur        = reset Typeface -- Constructor name already taken
+reset Underline      = "\x1b[24m"
+reset Blink          = "\x1b[25m"
+reset Invert         = "\x1b[27m"
+reset Conceal        = "\x1b[28m"
+reset Strike         = "\x1b[29m"
+reset Proportional   = "\x1b[50m"
+reset Frame          = "\x1b[54m"
+reset Overline       = "\x1b[55m"
+reset Ideogram       = "\x1b[65m"
+reset Script         = "\x1b[75m"
+reset Fg             = "\x1b[39m"
+reset Bg             = "\x1b[49m"
+reset Ul             = "\x1b[59m"
 
 
 -- ================================================================
