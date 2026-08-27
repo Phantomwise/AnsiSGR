@@ -32,6 +32,7 @@ data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Def
             | ProportionalOn | ProportionalOff
             | OverlineOn | OverlineOff
             | Rect | Circle
+            | Underline | Underline2 | Overline | Overline2 | RightLine | RightLine2 | LeftLine | LeftLine2 | Stress
             | Sub | Sup
             | On | Off
             | Reset
@@ -220,6 +221,20 @@ overline Off       = "\x1b[55m"
 overline _         = ""
 
 
+ideogram :: SGR -> String
+ideogram RightLine  = "\x1b[60m"
+ideogram RightLine2 = "\x1b[61m"
+ideogram LeftLine   = "\x1b[62m"
+ideogram LeftLine2  = "\x1b[63m"
+ideogram Underline  = ideogram RightLine
+ideogram Underline2 = ideogram RightLine2
+ideogram Overline   = ideogram LeftLine
+ideogram Overline2  = ideogram LeftLine2
+ideogram Stress     = "\x1b[64m"
+ideogram Off        = "\x1b[65m"
+ideogram _          = ""
+
+
 script :: SGR -> String
 script Sup         = "\x1b[73m"
 script Sub         = "\x1b[74m"
@@ -233,4 +248,3 @@ reset = "\x1b[0m"
 
 
 -- ================================================================
-
