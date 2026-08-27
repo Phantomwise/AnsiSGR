@@ -29,6 +29,7 @@ data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Def
             | ConcealOn | ConcealOff
             | StrikeOn | StrikeOff
             | ProportionalOn | ProportionalOff
+            | OverlineOn | OverlineOff
             | On | Off
             | Reset
 	deriving (Show)
@@ -182,6 +183,12 @@ proportional :: SGR -> String
 proportional On    = "\x1b[26m"
 proportional Off   = "\x1b[50m"
 proportional _     = ""
+
+
+overline :: SGR -> String
+overline On        = "\x1b[53m"
+overline Off       = "\x1b[55m"
+overline _         = ""
 
 
 reset :: String
