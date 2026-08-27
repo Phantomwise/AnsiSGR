@@ -22,7 +22,6 @@ module TerminalSGR
 
 
 import Data.Word (Word8)
-import Numeric (readHex)
 import Text.Read (readMaybe)
 
 
