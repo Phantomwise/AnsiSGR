@@ -101,6 +101,53 @@ fgv Default = "\x1b[39m"
 fgv _       = ""
 
 
+bg :: SGR -> SGR -> String
+bg Dull Black    = "\x1b[40m"
+bg Dull Red      = "\x1b[41m"
+bg Dull Green    = "\x1b[42m"
+bg Dull Yellow   = "\x1b[43m"
+bg Dull Blue     = "\x1b[44m"
+bg Dull Magenta  = "\x1b[45m"
+bg Dull Cyan     = "\x1b[46m"
+bg Dull White    = "\x1b[47m"
+bg Vivid Black   = "\x1b[100m"
+bg Vivid Red     = "\x1b[101m"
+bg Vivid Green   = "\x1b[102m"
+bg Vivid Yellow  = "\x1b[103m"
+bg Vivid Blue    = "\x1b[104m"
+bg Vivid Magenta = "\x1b[105m"
+bg Vivid Cyan    = "\x1b[106m"
+bg Vivid White   = "\x1b[107m"
+bg _     Default = "\x1b[49m"
+bg _     _       = ""
+
+
+bgd :: SGR -> String
+bgd Black   = "\x1b[40m"
+bgd Red     = "\x1b[41m"
+bgd Green   = "\x1b[42m"
+bgd Yellow  = "\x1b[43m"
+bgd Blue    = "\x1b[44m"
+bgd Magenta = "\x1b[45m"
+bgd Cyan    = "\x1b[46m"
+bgd White   = "\x1b[47m"
+bgd Default = "\x1b[49m"
+bgd _       = ""
+
+
+bgv :: SGR -> String
+bgv Black   = "\x1b[100m"
+bgv Red     = "\x1b[101m"
+bgv Green   = "\x1b[102m"
+bgv Yellow  = "\x1b[103m"
+bgv Blue    = "\x1b[104m"
+bgv Magenta = "\x1b[105m"
+bgv Cyan    = "\x1b[106m"
+bgv White   = "\x1b[107m"
+bgv Default = "\x1b[49m"
+bgv _       = ""
+
+
 fg256 :: Word8 -> String
 fg256 arg = "\x1b[38;5;" ++ show arg ++ "m"
 
@@ -148,53 +195,6 @@ hexToWord :: String -> Word8
 hexToWord hex = case readMaybe ("0x" ++ hex) of
     Just x -> x
     Nothing -> error "Invalid hex value: Must be in the range 00-ff"
-
-
-bg :: SGR -> SGR -> String
-bg Dull Black    = "\x1b[40m"
-bg Dull Red      = "\x1b[41m"
-bg Dull Green    = "\x1b[42m"
-bg Dull Yellow   = "\x1b[43m"
-bg Dull Blue     = "\x1b[44m"
-bg Dull Magenta  = "\x1b[45m"
-bg Dull Cyan     = "\x1b[46m"
-bg Dull White    = "\x1b[47m"
-bg Vivid Black   = "\x1b[100m"
-bg Vivid Red     = "\x1b[101m"
-bg Vivid Green   = "\x1b[102m"
-bg Vivid Yellow  = "\x1b[103m"
-bg Vivid Blue    = "\x1b[104m"
-bg Vivid Magenta = "\x1b[105m"
-bg Vivid Cyan    = "\x1b[106m"
-bg Vivid White   = "\x1b[107m"
-bg _     Default = "\x1b[49m"
-bg _     _       = ""
-
-
-bgd :: SGR -> String
-bgd Black   = "\x1b[40m"
-bgd Red     = "\x1b[41m"
-bgd Green   = "\x1b[42m"
-bgd Yellow  = "\x1b[43m"
-bgd Blue    = "\x1b[44m"
-bgd Magenta = "\x1b[45m"
-bgd Cyan    = "\x1b[46m"
-bgd White   = "\x1b[47m"
-bgd Default = "\x1b[49m"
-bgd _       = ""
-
-
-bgv :: SGR -> String
-bgv Black   = "\x1b[100m"
-bgv Red     = "\x1b[101m"
-bgv Green   = "\x1b[102m"
-bgv Yellow  = "\x1b[103m"
-bgv Blue    = "\x1b[104m"
-bgv Magenta = "\x1b[105m"
-bgv Cyan    = "\x1b[106m"
-bgv White   = "\x1b[107m"
-bgv Default = "\x1b[49m"
-bgv _       = ""
 
 
 -- ================================================================
