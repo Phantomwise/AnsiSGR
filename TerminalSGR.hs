@@ -25,6 +25,8 @@ import Overline
 import Ideogram
 import Script
 
+import Reset
+
 
 -- ================================================================
 -- EXTERNAL IMPORTS
@@ -42,11 +44,6 @@ import Text.Read (readMaybe)
 
 data Color      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
 data Brightness = Dull | Vivid
-
-data Reset      = All
-                | Intensity | Typeface | Underline | Blink | Invert | Conceal | Strike | Proportional | Frame | Overline | Ideogram | Script
-                | Bg | Fg | Ul
-
 
 -- ================================================================
 -- COLOR FUNCTIONS
@@ -188,27 +185,6 @@ hexToWord hex = case readMaybe ("0x" ++ hex) of
 -- ================================================================
 -- STYLE FUNCTIONS
 -- ================================================================
-
-
-reset :: Reset -> String
-reset All            = "\x1b[0m"
-reset Intensity      = "\x1b[22m"
-reset Typeface       = "\x1b[23m"
--- reset Italic         = reset Typeface -- Constructor name already taken
--- reset Fraktur        = reset Typeface -- Constructor name already taken
-reset Underline      = "\x1b[24m"
-reset Blink          = "\x1b[25m"
-reset Invert         = "\x1b[27m"
-reset Conceal        = "\x1b[28m"
-reset Strike         = "\x1b[29m"
-reset Proportional   = "\x1b[50m"
-reset Frame          = "\x1b[54m"
-reset Overline       = "\x1b[55m"
-reset Ideogram       = "\x1b[65m"
-reset Script         = "\x1b[75m"
-reset Fg             = "\x1b[39m"
-reset Bg             = "\x1b[49m"
-reset Ul             = "\x1b[59m"
 
 
 -- ================================================================
