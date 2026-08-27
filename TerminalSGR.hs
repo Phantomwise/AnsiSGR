@@ -190,6 +190,7 @@ validateHex hex
 
 decomposeHex :: String -> [Word8]
 decomposeHex (a:b:c:d:e:f:[]) = map hexToWord [[a,b], [c,d], [e,f]]
+decomposeHex _ = error "Unreachable"
 
 hexToWord :: String -> Word8
 hexToWord hex = case readMaybe ("0x" ++ hex) of
