@@ -9,6 +9,7 @@ module TerminalSGR
     , fg256, bg256, ul256
     , fgRGB, bgRGB, ulRGB
     , fgHex, bgHex, ulHex
+    , ul
     , intensity, typeface, italic, fraktur, underline, blink, invert, conceal, strike, proportional, frame, overline, ideogram, script
     , reset
     )
@@ -226,6 +227,11 @@ fraktur :: SGR -> String
 fraktur On        = typeface Fraktur
 fraktur Off       = typeface Off
 fraktur _         = ""
+
+
+ul :: SGR -> String
+ul Default  = "\x1b[59m"
+ul _        = ""
 
 
 underline :: SGR -> String
