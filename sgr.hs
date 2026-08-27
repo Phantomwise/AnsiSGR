@@ -22,9 +22,9 @@ module SGR where
 
 data Ansi      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Default
                | Dull | Vivid
-               | Slow | Rapid | BlinkOff
                | Bold | Faint | IntensityOff
                | Single | Double | UnderlineOff
+               | Slow | Rapid | BlinkOff
                | InvertOn | InvertOff
                | ConcealOn | ConcealOff
                | StrikeOn | StrikeOff
