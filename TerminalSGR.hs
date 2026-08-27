@@ -8,6 +8,7 @@ module TerminalSGR
     , fg, fgd, fgv, bg, bgd, bgv
     , fg256, bg256, ul256
     , fgRGB, bgRGB, ulRGB
+    , fgHex, bgHex, ulHex
     , intensity, typeface, italic, fraktur, underline, blink, invert, conceal, strike, proportional, frame, overline, ideogram, script
     , reset
     )
@@ -20,6 +21,8 @@ module TerminalSGR
 
 
 import Data.Word (Word8)
+import Numeric (readHex)
+import Text.Read (readMaybe)
 
 
 -- ================================================================
@@ -115,6 +118,36 @@ ul256 arg = "\x1b[58;5;" ++ show arg ++ "m"
 
 ulRGB :: Word8 -> Word8 -> Word8 -> String
 ulRGB r g b = "\x1b[58;2;" ++ (show r) ++ ";" ++ (show g) ++ ";" ++ (show b) ++ "m"
+
+
+fgHex :: String -> String
+fgHex hex = case validateHex hex of
+    [r, g, b] -> fgRGB r g b
+    _         -> error "Unreachable"
+
+bgHex :: String -> String
+bgHex hex = case validateHex hex of
+    [r, g, b] -> bgRGB r g b
+    _         -> error "Unreachable"
+
+ulHex :: String -> String
+ulHex hex = case validateHex hex of
+    [r, g, b] -> ulRGB r g b
+    _         -> error "Unreachable"
+
+
+validateHex :: String -> [Word8]
+validateHex hex
+    | length hex == 6 = decomposeHex hex
+    | otherwise       = error "Invalid hex value: Must have exactly 6 characters"
+
+decomposeHex :: String -> [Word8]
+decomposeHex (a:b:c:d:e:f:[]) = map hexToWord [[a,b], [c,d], [e,f]]
+
+hexToWord :: String -> Word8
+hexToWord hex = case readMaybe ("0x" ++ hex) of
+    Just x -> x
+    Nothing -> error "Invalid hex value: Must be in the range 00-ff"
 
 
 bg :: SGR -> SGR -> String
