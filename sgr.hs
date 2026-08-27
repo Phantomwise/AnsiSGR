@@ -29,6 +29,7 @@ data Ansi      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | 
                | ConcealOn | ConcealOff
                | StrikeOn | StrikeOff
                | On | Off
+			   | Reset
 	deriving (Show)
 
 
@@ -174,6 +175,11 @@ strike :: Ansi -> String
 strike On          = "\x1b[9m"
 strike Off         = "\x1b[29m"
 strike _           = ""
+
+
+reset :: String
+reset = "\x1b[0m"
+-- Not actually using the constructor for now
 
 
 -- ================================================================
