@@ -8,7 +8,26 @@ module TerminalSGR
 
 
 -- ================================================================
--- IMPORTS
+-- LOCAL IMPORTS
+-- ================================================================
+
+
+import Intensity
+import Typeface
+import Underline
+import Blink
+import Invert
+import Conceal
+import Strike
+import Proportional
+import Frame
+import Overline
+import Ideogram
+import Script
+
+
+-- ================================================================
+-- EXTERNAL IMPORTS
 -- ================================================================
 
 
@@ -23,14 +42,6 @@ import Text.Read (readMaybe)
 
 data Color      = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
 data Brightness = Dull | Vivid
-
-data Intensity  = Bold | Faint
-data Typeface   = Italic | Fraktur
-data Underline  = Single | Double
-data Blink      = Slow | Rapid
-data Frame      = Rect | Circle
-data Ideogram   = Underline1 | Underline2 | Overline1 | Overline2 | RightLine1 | RightLine2 | LeftLine1 | LeftLine2 | Stress
-data Script     = Sub | Sup
 
 data Reset      = All
                 | Intensity | Typeface | Underline | Blink | Invert | Conceal | Strike | Proportional | Frame | Overline | Ideogram | Script
@@ -177,76 +188,6 @@ hexToWord hex = case readMaybe ("0x" ++ hex) of
 -- ================================================================
 -- STYLE FUNCTIONS
 -- ================================================================
-
-
-intensity :: Intensity -> String
-intensity Bold     = "\x1b[1m"
-intensity Faint    = "\x1b[2m"
-
-
-typeface :: Typeface -> String
-typeface Italic    = "\x1b[3m"
-typeface Fraktur   = "\x1b[20m"
-
-italic :: String
-italic             = typeface Italic
-
-fraktur :: String
-fraktur            = typeface Fraktur
-
-
-underline :: Underline -> String
-underline Single   = "\x1b[4m"
-underline Double   = "\x1b[21m"
-
-
-blink :: Blink -> String
-blink Slow         = "\x1b[5m"
-blink Rapid        = "\x1b[6m"
-
-
-invert :: String
-invert             = "\x1b[7m"
--- Renamed from "revert" to avoid clash with Prelude
-
-
-conceal :: String
-conceal            = "\x1b[8m"
-
-
-strike :: String
-strike             = "\x1b[9m"
-
-
-proportional :: String
-proportional       = "\x1b[26m"
-
-
-
-frame :: Frame -> String
-frame Rect         = "\x1b[51m"
-frame Circle       = "\x1b[52m"
-
-
-overline :: String
-overline           = "\x1b[53m"
-
-
-ideogram :: Ideogram -> String
-ideogram RightLine1 = "\x1b[60m"
-ideogram RightLine2 = "\x1b[61m"
-ideogram LeftLine1  = "\x1b[62m"
-ideogram LeftLine2  = "\x1b[63m"
-ideogram Underline1 = ideogram RightLine1
-ideogram Underline2 = ideogram RightLine2
-ideogram Overline1  = ideogram LeftLine1
-ideogram Overline2  = ideogram LeftLine2
-ideogram Stress     = "\x1b[64m"
-
-
-script :: Script -> String
-script Sup         = "\x1b[73m"
-script Sub         = "\x1b[74m"
 
 
 reset :: Reset -> String
