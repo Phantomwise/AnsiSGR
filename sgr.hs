@@ -31,6 +31,7 @@ data SGR    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White | Def
             | ProportionalOn | ProportionalOff
             | OverlineOn | OverlineOff
             | Rect | Circle
+            | Sub | Sup
             | On | Off
             | Reset
 	deriving (Show)
@@ -197,6 +198,13 @@ overline :: SGR -> String
 overline On        = "\x1b[53m"
 overline Off       = "\x1b[55m"
 overline _         = ""
+
+
+script :: SGR -> String
+script Sup         = "\x1b[73m"
+script Sub         = "\x1b[74m"
+script Off         = "\x1b[75m"
+script _           = ""
 
 
 reset :: String
