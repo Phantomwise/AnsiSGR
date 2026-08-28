@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] Derive instances like Eq, Bounded, Enum
 - [ ] Add # to Hex codes so VS Code extensions can show a preview of the color
 - [ ] Find a better name
 - [ ] Rename github repo
