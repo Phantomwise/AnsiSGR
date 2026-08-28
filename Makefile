@@ -1,4 +1,4 @@
-.PHONY: create-log-folder log-styles print-styles
+.PHONY: create-log-folder log-styles test-styles print-styles
 
 print-styles:
 	@echo ""
@@ -12,3 +12,8 @@ log-styles: create-log-folder
 	@echo ""
 	@echo -e "\x1b[33m=== Log styles ===\x1b[0m"
 	bash -c 'script -c "runghc -isrc examples/PrintAllStyles.hs" log/PrintAllStyles.log'
+
+test-styles: log-styles
+	@echo ""
+	@echo -e "\x1b[33m=== Test styles ===\x1b[0m"
+	runghc -isrc test/TestAllStyles.hs
