@@ -2,6 +2,7 @@
 
 - [ ] Add # to Hex codes so VS Code extensions can show a preview of the color
 - [ ] Find a better name
+- [ ] Rename github repo
 - [ ] Use two namespaces, one for String and one for Text, so the module doesn't break when Text support is added
 - [ ] Check organization of files follow guidelines
 - [ ] Figure out how to use Cabal
@@ -14,7 +15,7 @@
 - [ ] Make an automated test that tries all the functions and run it with something to capture the output like `script`
 	- `Test.hs` imports TerminalSGR, calls every function, prints results normally
 	- Then is run from a terminal and the actual real output is captured:
-		- `bash -c 'script -c "runghc Test.hs" test.log'`
+		- `bash -c 'script -c "runghc -i. -isrc Test.hs" test.log'`
 		- `bash -c 'script -c "cabal run test-sgr" test.log'`
 
 ## Later
