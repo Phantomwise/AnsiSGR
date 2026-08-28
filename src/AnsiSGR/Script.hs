@@ -1,13 +1,17 @@
 -- ================================================================
--- OVERLINE
+-- SCRIPT
 -- ================================================================
 
 
-module Overline (overline) where
+module AnsiSGR.Script (Script(..), script) where
 
 
-overline :: String
-overline           = "\x1b[53m"
+data Script     = Sub | Sup
+
+
+script :: Script -> String
+script Sup         = "\x1b[73m"
+script Sub         = "\x1b[74m"
 
 
 -- ================================================================

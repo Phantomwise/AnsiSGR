@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module Color8 (Color8(..), Brightness(..), fg, fgd, fgv, bg, bgd, bgv) where
+module AnsiSGR.Color8 (Color8(..), Brightness(..), fg, fgd, fgv, bg, bgd, bgv) where
 
 
 data Color8         = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White

@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module Frame (Frame(..), frame) where
+module AnsiSGR.Frame (Frame(..), frame) where
 
 
 data Frame         = Rect | Circle

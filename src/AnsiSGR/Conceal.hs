@@ -1,14 +1,13 @@
 -- ================================================================
--- INVERT
+-- CONCEAL
 -- ================================================================
 
 
-module Invert (invert) where
+module AnsiSGR.Conceal (conceal) where
 
 
-invert :: String
-invert             = "\x1b[7m"
--- Renamed from "revert" to avoid clash with Prelude
+conceal :: String
+conceal            = "\x1b[8m"
 
 
 -- ================================================================

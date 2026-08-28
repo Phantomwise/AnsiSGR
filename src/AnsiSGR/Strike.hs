@@ -1,17 +1,13 @@
 -- ================================================================
--- BLINK
+-- STRIKE
 -- ================================================================
 
 
-module Blink (Blink(..), blink) where
+module AnsiSGR.Strike (strike) where
 
 
-data Blink         = Slow | Rapid
-
-
-blink :: Blink -> String
-blink Slow         = "\x1b[5m"
-blink Rapid        = "\x1b[6m"
+strike :: String
+strike             = "\x1b[9m"
 
 
 -- ================================================================

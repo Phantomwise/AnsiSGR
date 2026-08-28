@@ -1,17 +1,17 @@
 -- ================================================================
--- INTENSITY
+-- UNDERLINE
 -- ================================================================
 
 
-module Intensity (Intensity(..), intensity) where
+module AnsiSGR.Underline (Underline(..), underline) where
 
 
-data Intensity     = Bold | Faint
+data Underline     = Single | Double
 
 
-intensity :: Intensity -> String
-intensity Bold     = "\x1b[1m"
-intensity Faint    = "\x1b[2m"
+underline :: Underline -> String
+underline Single   = "\x1b[4m"
+underline Double   = "\x1b[21m"
 
 
 -- ================================================================

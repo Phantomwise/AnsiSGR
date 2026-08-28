@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module Typeface (Typeface(..), typeface, italic, fraktur) where
+module AnsiSGR.Typeface (Typeface(..), typeface, italic, fraktur) where
 
 
 data Typeface      = Italic | Fraktur

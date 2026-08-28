@@ -1,17 +1,14 @@
 -- ================================================================
--- UNDERLINE
+-- INVERT
 -- ================================================================
 
 
-module Underline (Underline(..), underline) where
+module AnsiSGR.Invert (invert) where
 
 
-data Underline     = Single | Double
-
-
-underline :: Underline -> String
-underline Single   = "\x1b[4m"
-underline Double   = "\x1b[21m"
+invert :: String
+invert             = "\x1b[7m"
+-- Renamed from "revert" to avoid clash with Prelude
 
 
 -- ================================================================

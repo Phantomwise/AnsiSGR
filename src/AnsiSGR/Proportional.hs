@@ -1,13 +1,13 @@
 -- ================================================================
--- CONCEAL
+-- PROPORTIONAL
 -- ================================================================
 
 
-module Conceal (conceal) where
+module AnsiSGR.Proportional (proportional) where
 
 
-conceal :: String
-conceal            = "\x1b[8m"
+proportional :: String
+proportional       = "\x1b[26m"
 
 
 -- ================================================================

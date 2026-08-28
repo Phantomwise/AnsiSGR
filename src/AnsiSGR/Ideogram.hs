@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module Ideogram (Ideogram(..), ideogram) where
+module AnsiSGR.Ideogram (Ideogram(..), ideogram) where
 
 
 data Ideogram       = Underline1 | Underline2 | Overline1 | Overline2 | RightLine1 | RightLine2 | LeftLine1 | LeftLine2 | Stress

@@ -1,13 +1,17 @@
 -- ================================================================
--- PROPORTIONAL
+-- INTENSITY
 -- ================================================================
 
 
-module Proportional (proportional) where
+module AnsiSGR.Intensity (Intensity(..), intensity) where
 
 
-proportional :: String
-proportional       = "\x1b[26m"
+data Intensity     = Bold | Faint
+
+
+intensity :: Intensity -> String
+intensity Bold     = "\x1b[1m"
+intensity Faint    = "\x1b[2m"
 
 
 -- ================================================================

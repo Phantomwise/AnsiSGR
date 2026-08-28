@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module Reset (Reset(..), reset) where
+module AnsiSGR.Reset (Reset(..), reset) where
 
 
 data Reset           = All
