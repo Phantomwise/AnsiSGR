@@ -1,7 +1,8 @@
 # TODO
 
 - [ ] Derive instances like Eq, Bounded, Enum
-- [ ] Add # to Hex codes so VS Code extensions can show a preview of the color
+- [x] Add # to Hex codes so VS Code extensions can show a preview of the color
+- [ ] Maybe split color modules into fg/bg/ul variants and have the main Color8/Color256/ColorHex import them?
 - [ ] Find a better name
 - [ ] Rename github repo
 - [ ] Use two namespaces, one for String and one for Text, so the module doesn't break when Text support is added
