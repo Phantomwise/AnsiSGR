@@ -175,8 +175,8 @@ resetColor = "\ESC[0m"
 --   preserving each group's first-seen order.
 groupByLabel :: [LineCheck] -> [(String, [LineCheck])]
 groupByLabel checks =
-    [ (lcLabel (head g), g)
-    | g <- groupBy (\a b -> lcLabel a == lcLabel b) (sortOn lcLabel checks)
+    [ (lcLabel firstCheck, g)
+    | g@(firstCheck:_) <- groupBy (\a b -> lcLabel a == lcLabel b) (sortOn lcLabel checks)
     ]
 
 
