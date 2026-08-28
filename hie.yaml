@@ -1,0 +1,3 @@
+cradle:
+    direct:
+        arguments: ["-iexamples", "-isrc", "-itest"]
