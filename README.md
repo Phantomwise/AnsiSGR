@@ -14,6 +14,7 @@ Look no further! This module is for you!
 - [Features](#features)
 - [Usage](#usage)
 - [Status](#status)
+- [Preview](#preview)
 - [Testing](#testing)
 - [AI](#ai)
 - [License](#license)
@@ -33,14 +34,29 @@ Look no further! This module is for you!
 - Explicit reset for each attribute (`Reset`)
 - Support only `String` for now. `Text` support is planned.
 - Split into several modules by category (`Blink`, `Color8`, etc). Import the whole thing via `AnsiSGR`, or import the sub-modules you need: each one is self-contained.
+- Contains a Haskell script you can run to see which codes your terminal supports (see [Preview](#Preview))
 
 ## Usage
 
 ...
 
+To check how the codes render on your terminal, see [Preview](#Preview)
+
 ## Status
 
 ...
+
+## Preview
+
+Not all terminals support all ANSI SGR codes. Actually none that I am aware of support all of them (please tell me if you find one who does).
+
+To see how all the non-color codes render on your terminal, run `make print-styles` or use the [script](examples/PrintAllStyles.hs) directly.
+
+You will get something like :
+
+![Screenshot](examples/preview-styles-kitty.gif)
+
+From that output we can see that [Kitty](https://github.com/kovidgoyal/kitty) renders: blink Slow, intensity Bold, intensity Faint, invert, strike, italic, underline Single, underline Double
 
 ## Testing
 
