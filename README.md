@@ -15,6 +15,7 @@ Look no further! This module is for you!
 - [Usage](#usage)
 - [Status](#status)
 - [Testing](#testing)
+- [AI](#ai)
 - [License](#license)
 
 ## Features
@@ -44,6 +45,13 @@ Look no further! This module is for you!
 ## Testing
 
 ...
+
+## AI
+
+- No AI code in the module itself
+- AI was used to generate the following tests:
+	- `TestAllStyles.hs`
+- No AI code anywhere else
 
 ## License
 
