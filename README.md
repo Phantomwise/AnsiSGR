@@ -47,4 +47,5 @@ Look no further! This module is for you!
 
 ## License
 
-...
+BSD 3-Clause. See [LICENSE](LICENSE).
+
