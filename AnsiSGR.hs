@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module TerminalSGR
+module AnsiSGR
     ( module Color8
     , module Color256
     , module ColorRGB

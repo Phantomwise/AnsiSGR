@@ -1,7 +1,7 @@
 #!/usr/bin/env runghc
 
 
-import TerminalSGR
+import AnsiSGR
 
 
 main :: IO ()
