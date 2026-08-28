@@ -9,6 +9,14 @@ Have you ever felt like murdering your code editor for not being able to show co
 Look no further! This module is for you!
 </em></p>
 
+## Table
+
+- [Features](#features)
+- [Usage](#usage)
+- [Status](#status)
+- [Testing](#testing)
+- [License](#license)
+
 ## Features
 
 - Soon comprehensive support of **ALL** the SGR color codes, even those supported by **ZERO** terminals! 🥳 *(Only the codes 10-19, for alternative fonts, are not yet implemented)*
@@ -24,3 +32,19 @@ Look no further! This module is for you!
 - Explicit reset for each attribute (`Reset`)
 - Support only `String` for now. `Text` support is planned.
 - Split into several modules by category (`Blink`, `Color8`, etc). Import the whole thing via `AnsiSGR`, or import the sub-modules you need: each one is self-contained.
+
+## Usage
+
+...
+
+## Status
+
+...
+
+## Testing
+
+...
+
+## License
+
+...
