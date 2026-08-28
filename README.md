@@ -65,8 +65,11 @@ From that output we can see that [Kitty](https://github.com/kovidgoyal/kitty) re
 ## AI
 
 - No AI code in the module itself
-- AI was used to generate the following tests:
-	- `TestAllStyles.hs`
+- AI was used to generate the following files:
+	- Tests:
+		- `TestAllStyles.hs`
+	- GitHub actions:
+		- `.github/workflows/run-tests.yaml`
 - No AI code anywhere else
 
 ## License
