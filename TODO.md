@@ -3,27 +3,26 @@
 - [ ] Derive instances like Eq, Bounded, Enum
 - [x] Add # to Hex codes so VS Code extensions can show a preview of the color
 - [ ] Maybe split color modules into fg/bg/ul variants and have the main Color8/Color256/ColorHex import them?
-- [ ] Find a better name
-- [ ] Rename github repo
-- [x] Use two namespaces, one for String and one for Text, so the module doesn't break when Text support is added
+- [x] Find a better name
+- [x] Rename github repo
 - [ ] Check organization of files follow guidelines
 - [ ] Figure out how to use Cabal
 	- [ ] Add license file
 	- [ ] Add version bounds on dependencies
-- [ ] Add README
+- [x] Add README
 	- Disclaimer about some codes being untested-on-real-terminal codes (though tested by capturing terminal output)
 - [ ] Add CHANGELOG
-- [ ] Add a shell.nix
-- [ ] Make an automated test that tries all the functions and run it with something to capture the output like `script`
-	- `Test.hs` imports TerminalSGR, calls every function, prints results normally
-	- Then is run from a terminal and the actual real output is captured:
-		- `bash -c 'script -c "runghc -i. -isrc Test.hs" test.log'`
-		- `bash -c 'script -c "cabal run test-sgr" test.log'`
+- [x] Add a shell.nix
+- [ ] Make automated tests that tries all the functions and run it with something to capture the output like `script`
+	- [x] Tests for non-color functions
+	- [ ] Tests for color functions
 
 ## Later
 
-- [ ] Figure out how to support Text without duplicating everything (check how text-ansi does it)
-	- Leaning towards: just duplicate the code for better performance, and make sure everything can be imported separately
+- [ ] Support Text
+	- [ ] Decided on duplicate the code for both String and Text (better performance than one being a wrapper)
+	- [x] Use two namespaces, one for String and one for Text, so the module doesn't break when Text support is added
+	- [ ] Make sure both can be imported separately
 
 ## Remaining unsupported SGR:
 
