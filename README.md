@@ -38,7 +38,21 @@ Look no further! This module is for you!
 
 ## Usage
 
-...
+### General Usage
+
+All the functions insert the relevant ANSI SGR code. You use them with concatenation:
+
+```haskell
+    putStrLn (intensity Bold ++ "Text in bold intensity" ++ reset Intensity)
+    putStrLn (fgd Cyan ++ "Text in Cyan" ++ reset Fg)
+```
+
+You can use either specific reset functions or the global reset:
+
+```haskell
+    putStrLn (intensity Bold ++ fgd Red ++ "ERROR" ++ reset Intensity ++ reset Fg)
+    putStrLn (intensity Bold ++ fgd Red ++ "ERROR" ++ reset All)
+```
 
 To check how the codes render on your terminal, see [Preview](#Preview)
 
