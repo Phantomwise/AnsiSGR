@@ -38,6 +38,38 @@ A Haskell module for ANSI SGR codes: background/foreground/underline color, inte
 
 ### Importing
 
+Either import the whole String bundle:
+
+`import AnsiSGR.String`
+
+Or import only the modules you need among the following:
+
+```
+import AnsiSGR.String.Color8
+import AnsiSGR.String.Color256
+import AnsiSGR.String.ColorRGB
+import AnsiSGR.String.ColorHex
+
+import AnsiSGR.String.Intensity
+import AnsiSGR.String.Typeface
+import AnsiSGR.String.Underline
+import AnsiSGR.String.Blink
+import AnsiSGR.String.Invert
+import AnsiSGR.String.Conceal
+import AnsiSGR.String.Strike
+import AnsiSGR.String.Proportional
+import AnsiSGR.String.Frame
+import AnsiSGR.String.Overline
+import AnsiSGR.String.Ideogram
+import AnsiSGR.String.Script
+
+import AnsiSGR.String.Reset
+```
+
+They are all self-contained.
+
+If you hand-pick modules, you **WILL** need the `Reset` module, which contains all the reset codes (see [Implementation Notes](NOTES.md) for why they're not bundled together with the functions they reset).
+
 ### General Usage
 
 All the functions insert the relevant ANSI SGR code. You use them with concatenation:
