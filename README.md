@@ -14,6 +14,7 @@ A Haskell module for ANSI SGR codes: background/foreground/underline color, inte
 - [Status](#status)
 - [Preview](#preview)
 - [Testing](#testing)
+- [Implementation Notes](#implementation-notes)
 - [AI](#ai)
 - [License](#license)
 
@@ -119,6 +120,10 @@ From that output we can see that [Kitty](https://github.com/kovidgoyal/kitty) re
 ## Testing
 
 ...
+
+## Implementation Notes
+
+See [NOTES](NOTES.md)
 
 ## AI
 
