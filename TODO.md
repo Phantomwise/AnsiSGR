@@ -1,6 +1,9 @@
 # TODO
 
-- [ ] Derive instances like Eq, Bounded, Enum
+- [x] Derive instances like Eq, Bounded, Enum
+- [ ] Update PrintAllStyles to use `[minBound .. maxBound]` on data types
+- [ ] Derive Show
+- [ ] Update PrintAllStyles to use Show on the data types returned by `[minBound .. maxBound]`
 - [x] Add # to Hex codes so VS Code extensions can show a preview of the color
 - [ ] Maybe split color modules into fg/bg/ul variants and have the main Color8/Color256/ColorHex import them?
 - [x] Find a better name
@@ -20,9 +23,10 @@
 ## Later
 
 - [ ] Support Text
-	- [ ] Decided on duplicate the code for both String and Text (better performance than one being a wrapper)
+	- [x] Decided on duplicating the code for both String and Text (better performance than one being a wrapper packing/unpacking the other)
 	- [x] Use two namespaces, one for String and one for Text, so the module doesn't break when Text support is added
 	- [ ] Make sure both can be imported separately
+	- [ ] Add a test to verify that both Text and String folders contain identical code
 
 ## Remaining unsupported SGR:
 
