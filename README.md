@@ -103,7 +103,19 @@ To check how the codes render on your terminal, see [Preview](#Preview)
 
 ...
 
-#### Hex wrapper:
+#### Basic 8-color palette
+
+...
+
+#### 256-color palette
+
+...
+
+#### RGB color palette
+
+...
+
+#### Hex wrapper for the RGB color palette
 
 ...
 
