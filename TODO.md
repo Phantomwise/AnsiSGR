@@ -12,6 +12,7 @@
 - [ ] Figure out how to use Cabal
 	- [ ] Add license file
 	- [ ] Add version bounds on dependencies
+	- [ ] Add a `PrintAllStyles.hs` as executable with `Default: False`
 - [x] Add README
 	- Disclaimer about some codes being untested-on-real-terminal codes (though tested by capturing terminal output)
 - [ ] Add CHANGELOG

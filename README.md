@@ -115,7 +115,7 @@ To check how the codes render on your terminal, see [Preview](#Preview)
 
 Not all terminals support all ANSI SGR codes. Actually none that I am aware of support all of them (please tell me if you find one who does).
 
-To see how all the non-color codes render on your terminal, run `make print-styles` or use the [script](examples/PrintAllStyles.hs) directly.
+To see how all the non-color codes render on your terminal, run `make print-styles` or use the [script](app/PrintAllStyles.hs) directly.
 
 You will get something like :
 

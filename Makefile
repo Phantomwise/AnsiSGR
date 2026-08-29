@@ -3,7 +3,7 @@
 print-styles:
 	@echo ""
 	@echo -e "\x1b[33m=== Print styles ===\x1b[0m"
-	runghc -isrc examples/PrintAllStyles.hs
+	runghc -isrc app/PrintAllStyles.hs
 
 create-log-folder:
 	mkdir -p log
@@ -11,7 +11,7 @@ create-log-folder:
 log-styles: create-log-folder
 	@echo ""
 	@echo -e "\x1b[33m=== Log styles ===\x1b[0m"
-	bash -c 'script -c "runghc -isrc examples/PrintAllStyles.hs" log/PrintAllStyles.log'
+	bash -c 'script -c "runghc -isrc app/PrintAllStyles.hs" log/PrintAllStyles.log'
 
 test-styles: log-styles
 	@echo ""
