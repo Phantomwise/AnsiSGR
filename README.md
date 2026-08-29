@@ -38,6 +38,8 @@ Look no further! This module is for you!
 
 ## Usage
 
+### Importing
+
 ### General Usage
 
 All the functions insert the relevant ANSI SGR code. You use them with concatenation:
@@ -55,6 +57,18 @@ You can use either specific reset functions or the global reset:
 ```
 
 To check how the codes render on your terminal, see [Preview](#Preview)
+
+### Using style functions
+
+...
+
+### Using color functions
+
+...
+
+#### Hex wrapper:
+
+...
 
 ## Status
 
