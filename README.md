@@ -19,7 +19,7 @@ A Haskell module for ANSI SGR codes: background/foreground/underline color, inte
 
 ## Features
 
-- Soon comprehensive support of **ALL** the SGR color codes, even those supported by **ZERO** terminals! 🥳 *(Only the codes 10-19, for alternative fonts, are not yet implemented)*
+- Soon comprehensive support of **ALL** the SGR codes, even those supported by **ZERO** terminals! 🥳 *(Only the codes 10-19, for alternative fonts, are not yet implemented)*
 - 🎨 Colors for foreground, background and underline
 - 🎨 Color using either:
 	- 8 basic terminal color palette + bright/dull variants (`Color8`)
