@@ -1,7 +1,7 @@
 #!/usr/bin/env runghc
 
 
-import AnsiSGR
+import AnsiSGR.String
 
 
 main :: IO ()

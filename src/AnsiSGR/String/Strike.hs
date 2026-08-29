@@ -1,13 +1,13 @@
 -- ================================================================
--- OVERLINE
+-- STRIKE
 -- ================================================================
 
 
-module AnsiSGR.Overline (overline) where
+module AnsiSGR.String.Strike (strike) where
 
 
-overline :: String
-overline           = "\x1b[53m"
+strike :: String
+strike             = "\x1b[9m"
 
 
 -- ================================================================

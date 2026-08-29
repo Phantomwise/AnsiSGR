@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module AnsiSGR.ColorRGB (fgRGB, bgRGB, ulRGB) where
+module AnsiSGR.String.ColorRGB (fgRGB, bgRGB, ulRGB) where
 
 
 import Data.Word (Word8)

@@ -1,17 +1,13 @@
 -- ================================================================
--- FRAME
+-- PROPORTIONAL
 -- ================================================================
 
 
-module AnsiSGR.Frame (Frame(..), frame) where
+module AnsiSGR.String.Proportional (proportional) where
 
 
-data Frame         = Rect | Circle
-
-
-frame :: Frame -> String
-frame Rect         = "\x1b[51m"
-frame Circle       = "\x1b[52m"
+proportional :: String
+proportional       = "\x1b[26m"
 
 
 -- ================================================================

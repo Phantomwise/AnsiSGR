@@ -1,17 +1,14 @@
 -- ================================================================
--- BLINK
+-- INVERT
 -- ================================================================
 
 
-module AnsiSGR.Blink (Blink(..), blink) where
+module AnsiSGR.String.Invert (invert) where
 
 
-data Blink         = Slow | Rapid
-
-
-blink :: Blink -> String
-blink Slow         = "\x1b[5m"
-blink Rapid        = "\x1b[6m"
+invert :: String
+invert             = "\x1b[7m"
+-- Renamed from "revert" to avoid clash with Prelude
 
 
 -- ================================================================

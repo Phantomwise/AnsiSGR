@@ -1,13 +1,17 @@
 -- ================================================================
--- STRIKE
+-- SCRIPT
 -- ================================================================
 
 
-module AnsiSGR.Strike (strike) where
+module AnsiSGR.String.Script (Script(..), script) where
 
 
-strike :: String
-strike             = "\x1b[9m"
+data Script     = Sub | Sup
+
+
+script :: Script -> String
+script Sup         = "\x1b[73m"
+script Sub         = "\x1b[74m"
 
 
 -- ================================================================

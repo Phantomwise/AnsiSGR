@@ -1,17 +1,17 @@
 -- ================================================================
--- SCRIPT
+-- BLINK
 -- ================================================================
 
 
-module AnsiSGR.Script (Script(..), script) where
+module AnsiSGR.String.Blink (Blink(..), blink) where
 
 
-data Script     = Sub | Sup
+data Blink         = Slow | Rapid
 
 
-script :: Script -> String
-script Sup         = "\x1b[73m"
-script Sub         = "\x1b[74m"
+blink :: Blink -> String
+blink Slow         = "\x1b[5m"
+blink Rapid        = "\x1b[6m"
 
 
 -- ================================================================

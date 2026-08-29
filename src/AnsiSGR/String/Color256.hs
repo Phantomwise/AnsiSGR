@@ -3,7 +3,7 @@
 -- ================================================================
 
 
-module AnsiSGR.Color256 (fg256, bg256, ul256) where
+module AnsiSGR.String.Color256 (fg256, bg256, ul256) where
 
 
 import Data.Word (Word8)

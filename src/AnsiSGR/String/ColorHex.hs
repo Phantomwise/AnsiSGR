@@ -3,10 +3,10 @@
 -- ================================================================
 
 
-module AnsiSGR.ColorHex (fgHex, bgHex, ulHex) where
+module AnsiSGR.String.ColorHex (fgHex, bgHex, ulHex) where
 
 
-import AnsiSGR.ColorRGB
+import AnsiSGR.String.ColorRGB
 
 
 import Data.Word (Word8)

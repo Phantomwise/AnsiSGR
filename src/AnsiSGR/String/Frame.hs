@@ -1,17 +1,17 @@
 -- ================================================================
--- UNDERLINE
+-- FRAME
 -- ================================================================
 
 
-module AnsiSGR.Underline (Underline(..), underline) where
+module AnsiSGR.String.Frame (Frame(..), frame) where
 
 
-data Underline     = Single | Double
+data Frame         = Rect | Circle
 
 
-underline :: Underline -> String
-underline Single   = "\x1b[4m"
-underline Double   = "\x1b[21m"
+frame :: Frame -> String
+frame Rect         = "\x1b[51m"
+frame Circle       = "\x1b[52m"
 
 
 -- ================================================================

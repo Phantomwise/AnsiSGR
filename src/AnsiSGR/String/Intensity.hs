@@ -1,14 +1,17 @@
 -- ================================================================
--- INVERT
+-- INTENSITY
 -- ================================================================
 
 
-module AnsiSGR.Invert (invert) where
+module AnsiSGR.String.Intensity (Intensity(..), intensity) where
 
 
-invert :: String
-invert             = "\x1b[7m"
--- Renamed from "revert" to avoid clash with Prelude
+data Intensity     = Bold | Faint
+
+
+intensity :: Intensity -> String
+intensity Bold     = "\x1b[1m"
+intensity Faint    = "\x1b[2m"
 
 
 -- ================================================================

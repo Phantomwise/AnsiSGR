@@ -5,7 +5,7 @@
 - [ ] Maybe split color modules into fg/bg/ul variants and have the main Color8/Color256/ColorHex import them?
 - [ ] Find a better name
 - [ ] Rename github repo
-- [ ] Use two namespaces, one for String and one for Text, so the module doesn't break when Text support is added
+- [x] Use two namespaces, one for String and one for Text, so the module doesn't break when Text support is added
 - [ ] Check organization of files follow guidelines
 - [ ] Figure out how to use Cabal
 	- [ ] Add license file

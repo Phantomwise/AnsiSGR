@@ -1,13 +1,13 @@
 -- ================================================================
--- CONCEAL
+-- OVERLINE
 -- ================================================================
 
 
-module AnsiSGR.Conceal (conceal) where
+module AnsiSGR.String.Overline (overline) where
 
 
-conceal :: String
-conceal            = "\x1b[8m"
+overline :: String
+overline           = "\x1b[53m"
 
 
 -- ================================================================
