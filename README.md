@@ -2,12 +2,10 @@
 
 A Haskell module for ANSI SGR codes: background/foreground/underline color, intensity, blink, underline, overline, subscript/superscript, etc
 
-<p style="margin-left: 2em"><em>
-Have you ever laid awake at night wishing you could color underlines in terminal outputs?<br />
-Have you ever been depressed at not having an easy way to use uncommon ANSI codes like blink, superscript and proportional spacing?<br />
-Have you ever felt like murdering your code editor for not being able to show color previews of ANSI codes that use RGB colors?<br />
-Look no further! This module is for you!
-</em></p>
+*Have you ever laid awake at night wishing you could color underlines in terminal outputs?*<br />
+*Have you ever been depressed at not having an easy way to use uncommon ANSI codes like blink, superscript and proportional spacing?*<br />
+*Have you ever felt like murdering your code editor for not being able to show color previews of ANSI codes that use RGB colors?*<br />
+*Look no further! This module is for you!*
 
 ## Table
 
