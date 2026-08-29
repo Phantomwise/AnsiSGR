@@ -1,0 +1,145 @@
+Function,Code,Name,Origin,Notes
+reset All,\x1b[0m,Default rendition (reset),ECMA-48,ECMA-48: Cancels the effect of any preceding occurrence of SGR in the data stream regardless of the setting of the GRAPHIC RENDITION COMBINATION MODE (GRCM)
+intensity Bold,\x1b[1m,Bold or increased intensity,ECMA-48,—
+intensity Faint,\x1b[2m,"Faint, decreased intensity, or second colour",ECMA-48,Wikipedia: May be implemented as a light font weight like bold.
+typeface Italic,\x1b[3m,Italicized,ECMA-48,Wikipedia: Not widely supported. Sometimes treated as inverse or blink.
+italic,\x1b[3m,Italicized,ECMA-48,Wikipedia: Not widely supported. Sometimes treated as inverse or blink.
+underline Single,\x1b[4m,Singly underlined,ECMA-48,"Wikipedia: Style extensions exist for Kitty, VTE, mintty, iTerm2 and Konsole."
+blink Slow,\x1b[5m,Slowly blinking,ECMA-48,ECMA-48: less then 150 per minute
+blink Rapid,\x1b[6m,Rapidly blinking,ECMA-48,ECMA-48: 150 per minute or more
+invert,\x1b[7m,Negative image,ECMA-48,Wikipedia: Swap foreground and background colors.
+conceal,\x1b[8m,Concealed characters,ECMA-48,Wikipedia: Not widely supported.
+strike,\x1b[9m,Crossed-out,ECMA-48,ECMA-48: characters still legible but marked as to be deleted. Wikipedia: Characters legible but marked as if for deletion. Not supported in Terminal.app.
+[Not yet implemented],\x1b[10m,Primary (default) font,ECMA-48,—
+[Not yet implemented],\x1b[<11-19>m,Alternative font,ECMA-48,Select alternative font <1-9>
+[Not yet implemented],\x1b[11m,1st alternative font,ECMA-48,—
+[Not yet implemented],\x1b[12m,2nd alternative font,ECMA-48,—
+[Not yet implemented],\x1b[13m,3rd alternative font,ECMA-48,—
+[Not yet implemented],\x1b[14m,4th alternative font,ECMA-48,—
+[Not yet implemented],\x1b[15m,5th alternative font,ECMA-48,—
+[Not yet implemented],\x1b[16m,6th alternative font,ECMA-48,—
+[Not yet implemented],\x1b[17m,7th alternative font,ECMA-48,—
+[Not yet implemented],\x1b[18m,8th alternative font,ECMA-48,—
+[Not yet implemented],\x1b[19m,9th alternative font,ECMA-48,—
+typeface Fraktur,\x1b[20m,Fraktur (Gothic),ECMA-48,Wikipedia: Rarely supported
+fraktur,\x1b[20m,Fraktur (Gothic),ECMA-48,Wikipedia: Rarely supported
+underline Double,\x1b[21m,Doubly underlined,ECMA-48,"Wikipedia: Double-underline per ECMA-48,: 8.3.117  but instead disables bold intensity on several terminals, including in the Linux kernel's console before version 4.17."
+reset Intensity,\x1b[22m,Normal colour or normal intensity,ECMA-48,ECMA-48: Neither bold nor faint. Wikipedia: Color changes where intensity is implemented as such.
+reset Typeface,\x1b[23m,"Not italicized, not fraktur",ECMA-48,—
+reset Underline,\x1b[24m,Not underlined,ECMA-48,ECMA-48: Neither singly nor doubly
+reset Blink,\x1b[25m,Steady (not blinking),ECMA-48,—
+proportional,\x1b[26m,Proportional spacing,ECMA-48,"ECMA-48: reserved for proportional spacing as specified in CCITT Recommendation T.61. Wikipedia: ITU T.61 and T.416, not known to be used on terminals"
+reset Invert,\x1b[27m,Positive image (not reversed),ECMA-48,—
+reset Conceal,\x1b[28m,Revealed characters (not concealed),ECMA-48,—
+reset Strike,\x1b[29m,Not crossed out,ECMA-48,—
+fg Dull <Color>,\x1b[<30-37>m,Set foreground color,ECMA-48,—
+fgd <Color>,\x1b[<30-37>m,Set foreground color,ECMA-48,—
+fg Dull Black,\x1b[30m,Set foreground color (black),ECMA-48,—
+fgd Black,\x1b[30m,Set foreground color (black),ECMA-48,—
+fg Dull Red,\x1b[31m,Set foreground color (red),ECMA-48,—
+fgd Red,\x1b[31m,Set foreground color (red),ECMA-48,—
+fg Dull Green,\x1b[32m,Set foreground color (green),ECMA-48,—
+fgd Green,\x1b[32m,Set foreground color (green),ECMA-48,—
+fg Dull Yellow,\x1b[33m,Set foreground color (yellow),ECMA-48,—
+fgd Yellow,\x1b[33m,Set foreground color (yellow),ECMA-48,—
+fg Dull Blue,\x1b[34m,Set foreground color (blue),ECMA-48,—
+fgd Blue,\x1b[34m,Set foreground color (blue),ECMA-48,—
+fg Dull Magenta,\x1b[35m,Set foreground color (magenta),ECMA-48,—
+fgd Magenta,\x1b[35m,Set foreground color (magenta),ECMA-48,—
+fg Dull Cyan,\x1b[36m,Set foreground color (cyan),ECMA-48,—
+fgd Cyan,\x1b[36m,Set foreground color (cyan),ECMA-48,—
+fg Dull White,\x1b[37m,Set foreground color (white),ECMA-48,—
+fgd White,\x1b[37m,Set foreground color (white),ECMA-48,—
+fg256 <0-255>,\x1b[38;5;<0-255>m,Set foreground color,ECMA-48,Next arguments are `5;n`. ECMA-48: Reserved for future standardization; intended for setting character foreground colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+fgRGB <0-255> <0-255> <0-255>,\x1b[38;2;<0-255>;<0-255>;<0-255>m,Set foreground color,ECMA-48,Next arguments are `2;r;g;b`. ECMA-48: Reserved for future standardization; intended for setting character foreground colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+fgHex <hex>,\x1b[38;2;<0-255>;<0-255>;<0-255>m,Set foreground color,ECMA-48,Next arguments are `2;r;g;b`. ECMA-48: Reserved for future standardization; intended for setting character foreground colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+fgHex <#hex>,\x1b[38;2;<0-255>;<0-255>;<0-255>m,Set foreground color,ECMA-48,Next arguments are `2;r;g;b`. ECMA-48: Reserved for future standardization; intended for setting character foreground colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+reset Fg,\x1b[39m,Default foreground color,ECMA-48,ECMA-48: Default display colour (implementation-defined).
+bg Dull <Color>,\x1b[<40-47>m,Set background color,ECMA-48,—
+bgd <Color>,\x1b[<40-47>m,Set background color,ECMA-48,—
+bg Dull Black,\x1b[40m,Set background color (black),ECMA-48,—
+bgd Black,\x1b[40m,Set background color (black),ECMA-48,—
+bg Dull Red,\x1b[41m,Set background color (red),ECMA-48,—
+bgd Red,\x1b[41m,Set background color (red),ECMA-48,—
+bg Dull Green,\x1b[42m,Set background color (green),ECMA-48,—
+bgd Green,\x1b[42m,Set background color (green),ECMA-48,—
+bg Dull Yellow,\x1b[43m,Set background color (yellow),ECMA-48,—
+bgd Yellow,\x1b[43m,Set background color (yellow),ECMA-48,—
+bg Dull Blue,\x1b[44m,Set background color (blue),ECMA-48,—
+bgd Blue,\x1b[44m,Set background color (blue),ECMA-48,—
+bg Dull Magenta,\x1b[45m,Set background color (magenta),ECMA-48,—
+bgd Magenta,\x1b[45m,Set background color (magenta),ECMA-48,—
+bg Dull Cyan,\x1b[46m,Set background color (cyan),ECMA-48,—
+bgd Cyan,\x1b[46m,Set background color (cyan),ECMA-48,—
+bg Dull White,\x1b[47m,Set background color (white),ECMA-48,—
+bgd White,\x1b[47m,Set background color (white),ECMA-48,—
+bg256 <0-255>,\x1b[48;5;<0-255>m,Set background color,ECMA-48,Next arguments are `5;n`. ECMA-48: Reserved for future standardization; intended for setting character background colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+bgRGB <0-255> <0-255> <0-255>,\x1b[48;2;<0-255>;<0-255>;<0-255>m,Set background color,ECMA-48,Next arguments are `2;r;g;b`. ECMA-48: Reserved for future standardization; intended for setting character background colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+bgHex <hex>,\x1b[48;2;<0-255>;<0-255>;<0-255>m,Set background color,ECMA-48,Next arguments are `2;r;g;b`. ECMA-48: Reserved for future standardization; intended for setting character background colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+bgHex <#hex>,\x1b[48;2;<0-255>;<0-255>;<0-255>m,Set background color,ECMA-48,Next arguments are `2;r;g;b`. ECMA-48: Reserved for future standardization; intended for setting character background colour as specified in ISO 8613-6 [CCITT Recommendation T.416]
+reset Bg,\x1b[49m,Default background color,ECMA-48,ECMA-48: Default background colour (implementation-defined)
+reset Proportional,\x1b[50m,Disable proportional spacing,ECMA-48,ECMA-48: reserved for cancelling the effect of the rendering aspect established by parameter value 26. Wikipedia: T.61 and T.416
+frame Rect,\x1b[51m,Framed,ECMA-48,"Wikipedia: Implemented as ""emoji variation selector"" in mintty.[32]"
+frame Circle,\x1b[52m,Encircled,ECMA-48,"Wikipedia: Implemented as ""emoji variation selector"" in mintty.[32]"
+overline,\x1b[53m,Overlined,ECMA-48,Wikipedia: Not supported in Terminal.app
+reset Frame,\x1b[54m,"Not framed, not encircled",ECMA-48,—
+reset Overline,\x1b[55m,Not overlined,ECMA-48,—
+—,\x1b[<56-57>m,—,ECMA-48,ECMA-48: Reserved for future standardization
+ul256 <0-255>,\x1b[58;5;<0-255>m,Set underline color,ECMA-48,"ECMA-48: Reserved for future standardization. Wikipedia: Not in standard; implemented in Kitty, VTE, mintty, and iTerm2.[28][29] Next arguments are `5;n`."
+ulRGB <0-255> <0-255> <0-255>,\x1b[58;2;<0-255>;<0-255>;<0-255>m,Set underline color,ECMA-48,"ECMA-48: Reserved for future standardization. Wikipedia: Not in standard; implemented in Kitty, VTE, mintty, and iTerm2.[28][29] Next arguments are `2;r;g;b`."
+ulHex <hex>,\x1b[58;2;<0-255>;<0-255>;<0-255>m,Set underline color,ECMA-48,"ECMA-48: Reserved for future standardization. Wikipedia: Not in standard; implemented in Kitty, VTE, mintty, and iTerm2.[28][29] Next arguments are `2;r;g;b`."
+ulHex <#hex>,\x1b[58;2;<0-255>;<0-255>;<0-255>m,Set underline color,ECMA-48,"ECMA-48: Reserved for future standardization. Wikipedia: Not in standard; implemented in Kitty, VTE, mintty, and iTerm2.[28][29] Next arguments are `2;r;g;b`."
+reset Ul,\x1b[59m,Default underline color,ECMA-48,"ECMA-48: Reserved for future standardization. Wikipedia: Not in standard; implemented in Kitty, VTE, mintty, and iTerm2.[28][29]"
+ideogram RightLine1,\x1b[60m,Ideogram underline or right side line,ECMA-48,Wikipedia: Rarely supported
+ideogram Underline1,\x1b[60m,Ideogram underline or right side line,ECMA-48,Wikipedia: Rarely supported
+ideogram RightLine2,\x1b[61m,"Ideogram double underline, or double line on the right side",ECMA-48,—
+ideogram Underline2,\x1b[61m,"Ideogram double underline, or double line on the right side",ECMA-48,—
+ideogram LeftLine1,\x1b[62m,Ideogram overline or left side line,ECMA-48,—
+ideogram Overline1,\x1b[62m,Ideogram overline or left side line,ECMA-48,—
+ideogram LeftLine2,\x1b[63m,"Ideogram double overline, or double line on the left side",ECMA-48,—
+ideogram Overline2,\x1b[63m,"Ideogram double overline, or double line on the left side",ECMA-48,—
+ideogram Stress,\x1b[64m,Ideogram stress marking,ECMA-48,—
+reset Ideogram,\x1b[65m,No ideogram attributes,ECMA-48,Reset the effects of all of 60-64
+—,\x1b[<66-72>m,—,Unknown,Unknown (Not used by anything or defined anywhere that I could find)
+script Sup,\x1b[73m,Superscript,mintty,Wikipedia: Implemented only in mintty
+script Sub,\x1b[74m,Subscript,mintty,—
+reset Script,\x1b[75m,Neither superscript nor subscript,mintty,—
+—,\x1b[<76-89>m,—,Unknown,Unknown (Not used by anything or defined anywhere that I could find)
+fg Vivid <Color>,\x1b[<90-97>m,Set bright foreground color,aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv <Color>,\x1b[<90-97>m,Set bright foreground color,aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid Black,\x1b[90m,Set bright foreground color (black),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv Black,\x1b[90m,Set bright foreground color (black),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid Red,\x1b[91m,Set bright foreground color (red),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv Red,\x1b[91m,Set bright foreground color (red),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid Green,\x1b[92m,Set bright foreground color (green),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv Green,\x1b[92m,Set bright foreground color (green),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid Yellow,\x1b[93m,Set bright foreground color (yellow),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv Yellow,\x1b[93m,Set bright foreground color (yellow),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid Blue,\x1b[94m,Set bright foreground color (blue),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv Blue,\x1b[94m,Set bright foreground color (blue),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid Magenta,\x1b[95m,Set bright foreground color (magenta),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv Magenta,\x1b[95m,Set bright foreground color (magenta),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid Cyan,\x1b[96m,Set bright foreground color (cyan),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fgv Cyan,\x1b[96m,Set bright foreground color (cyan),aixterm,Wikipedia: Not in standard; originally implemented by aixterm
+fg Vivid White,\x1b[97m,Set bright foreground color (white),aixterm,Wikipedia: Not in standard; originally
+fgv White,\x1b[97m,Set bright foreground color (white),aixterm,Wikipedia: Not in standard; originally
+—,\x1b[<98-99>m,—,Unknown,Unknown (Not used by anything or defined anywhere that I could find)
+bg Vivid <Color>,\x1b[<100-107>m,Set bright background color,aixterm,—
+bgv <Color>,\x1b[<100-107>m,Set bright background color,aixterm,—
+bg Vivid Black,\x1b[100m,Set bright background color (black),aixterm,—
+bgv Black,\x1b[100m,Set bright background color (black),aixterm,—
+bg Vivid Red,\x1b[101m,Set bright background color (red),aixterm,—
+bgv Red,\x1b[101m,Set bright background color (red),aixterm,—
+bg Vivid Green,\x1b[102m,Set bright background color (green),aixterm,—
+bgv Green,\x1b[102m,Set bright background color (green),aixterm,—
+bg Vivid Yellow,\x1b[103m,Set bright background color (yellow),aixterm,—
+bgv Yellow,\x1b[103m,Set bright background color (yellow),aixterm,—
+bg Vivid Blue,\x1b[104m,Set bright background color (blue),aixterm,—
+bgv Blue,\x1b[104m,Set bright background color (blue),aixterm,—
+bg Vivid Magenta,\x1b[105m,Set bright background color (magenta),aixterm,—
+bgv Magenta,\x1b[105m,Set bright background color (magenta),aixterm,—
+bg Vivid Cyan,\x1b[106m,Set bright background color (cyan),aixterm,—
+bgv Cyan,\x1b[106m,Set bright background color (cyan),aixterm,—
+bg Vivid White,\x1b[107m,Set bright background color (white),aixterm,—
+bgv White,\x1b[107m,Set bright background color (white),aixterm,—
+—,\x1b[<108-...>m,—,Unknown,Unknown (Not used by anything or defined anywhere that I could find)
