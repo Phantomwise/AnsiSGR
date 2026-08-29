@@ -20,6 +20,8 @@
 - [ ] Make automated tests that tries all the functions and run it with something to capture the output like `script`
 	- [x] Tests for non-color functions
 	- [ ] Tests for color functions
+- [x] Make a file with implementation notes
+	- [ ] Add note about Reset being separate
 
 ## Later
 
