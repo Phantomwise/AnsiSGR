@@ -121,7 +121,7 @@ You will get something like :
 
 ![Screenshot](examples/preview-styles-kitty.gif)
 
-From that output we can see that [Kitty](https://github.com/kovidgoyal/kitty) renders: blink Slow, intensity Bold, intensity Faint, invert, strike, italic, underline Single, underline Double
+From that output we can see that [Kitty](https://github.com/kovidgoyal/kitty) renders: blink Slow, intensity Bold, intensity Faint, invert, strike, typeface Italic, italic, underline Single, underline Double
 
 ## Testing
 
