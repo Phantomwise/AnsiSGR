@@ -7,6 +7,7 @@ module AnsiSGR.String.Intensity (Intensity(..), intensity) where
 
 
 data Intensity     = Bold | Faint
+    deriving (Eq, Bounded, Enum)
 
 
 intensity :: Intensity -> String

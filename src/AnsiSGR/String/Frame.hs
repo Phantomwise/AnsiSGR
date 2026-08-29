@@ -7,6 +7,7 @@ module AnsiSGR.String.Frame (Frame(..), frame) where
 
 
 data Frame         = Rect | Circle
+    deriving (Eq, Bounded, Enum)
 
 
 frame :: Frame -> String

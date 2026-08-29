@@ -7,6 +7,7 @@ module AnsiSGR.String.Underline (Underline(..), underline) where
 
 
 data Underline     = Single | Double
+    deriving (Eq, Bounded, Enum)
 
 
 underline :: Underline -> String

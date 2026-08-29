@@ -6,8 +6,8 @@
 module AnsiSGR.String.Color8 (Color8(..), Brightness(..), fg, fgd, fgv, bg, bgd, bgv) where
 
 
-data Color8         = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
-data Brightness    = Dull | Vivid
+data Color8        = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White    deriving (Eq, Bounded, Enum)
+data Brightness    = Dull | Vivid                                                    deriving (Eq, Bounded, Enum)
 
 
 fg :: Brightness -> Color8 -> String

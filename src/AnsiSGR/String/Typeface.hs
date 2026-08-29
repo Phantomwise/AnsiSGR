@@ -7,6 +7,7 @@ module AnsiSGR.String.Typeface (Typeface(..), typeface, italic, fraktur) where
 
 
 data Typeface      = Italic | Fraktur
+    deriving (Eq, Bounded, Enum)
 
 
 typeface :: Typeface -> String

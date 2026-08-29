@@ -9,6 +9,7 @@ module AnsiSGR.String.Reset (Reset(..), reset) where
 data Reset           = All
                      | Intensity | Typeface | Underline | Blink | Invert | Conceal | Strike | Proportional | Frame | Overline | Ideogram | Script
                      | Bg | Fg | Ul
+    deriving (Eq, Bounded, Enum)
 
 
 reset :: Reset -> String

@@ -7,6 +7,7 @@ module AnsiSGR.String.Blink (Blink(..), blink) where
 
 
 data Blink         = Slow | Rapid
+    deriving (Eq, Bounded, Enum)
 
 
 blink :: Blink -> String

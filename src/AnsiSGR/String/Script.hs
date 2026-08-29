@@ -7,6 +7,7 @@ module AnsiSGR.String.Script (Script(..), script) where
 
 
 data Script     = Sub | Sup
+    deriving (Eq, Bounded, Enum)
 
 
 script :: Script -> String
