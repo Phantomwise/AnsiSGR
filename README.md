@@ -87,6 +87,12 @@ You can use either specific reset functions or the global reset:
     putStrLn (intensity Bold ++ fgd Red ++ "ERROR" ++ reset All)
 ```
 
+A few examples:
+
+![Example 1](examples/example-1.png)
+
+There are several equivalent ways to use the color functions (see [Using color functions](#using-color-functions)).
+
 To check how the codes render on your terminal, see [Preview](#Preview)
 
 ### Using style functions
