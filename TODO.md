@@ -22,6 +22,10 @@
 	- [ ] Tests for color functions
 - [x] Make a file with implementation notes
 	- [ ] Add note about Reset being separate
+	- [ ] Add reasoning about the SGR codes additions
+- [ ] Add support for my new 110-117 and 170-177 codes for underline color
+- [ ] Make a new repo for the SGR codes additions
+
 
 ## Later
 
